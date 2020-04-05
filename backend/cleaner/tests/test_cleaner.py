@@ -10,4 +10,4 @@ class TestCleaner(TestCase):
 
     def test_columns(self):
         self.df = self.cleaner.keep_date_only()
-
+        self.assertTrue(all(df.columns == ['ds', 'y']))

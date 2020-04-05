@@ -17,3 +17,4 @@ class Cleaner:
         df.rename(columns={'index': 'ds', 0: 'y'}, inplace=True)
         df['ds'] = pd.to_datetime(df['ds'])
         return df
+
