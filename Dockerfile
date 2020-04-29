@@ -1,8 +1,9 @@
-FROM python:3.8.2-slim-buster
+FROM python:3.8.2-buster
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install git-all -y d
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install git-all -y \
+    && apt-get -y install gcc
 
 WORKDIR /app
 
