@@ -1,8 +1,10 @@
 FROM python:3.8.2-slim-buster
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install git-all -y d
+RUN apt-get update \
+    && apt-get upgrade -y \
+    && apt-get install -y gcc \
+    && apt-get install -y g++ \
+    && apt-get install -y build-essential python-dev python3-pip
 
 WORKDIR /app
 
