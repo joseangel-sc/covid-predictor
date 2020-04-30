@@ -6,7 +6,7 @@ build:
 	docker build -t ${IMG} .
 
 tests:
-	docker run
+	docker run -it -v ${PWD}:/app ${IMG} python -m unittest
 
 shell:
 	docker run -it --entrypoint /bin/bash -v ${PWD}:/app ${IMG}
