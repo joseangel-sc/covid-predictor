@@ -1,12 +1,12 @@
 NAME := covid_predictori
-TAG  := $(shell )
-IMG  := ${NAME}
+TAG  := $(shell git log --pretty=format:'%h' -n 1)
+IMG  := ${NAME}:${TAG}
 
 build:
-	docker build .
+	docker build -t ${IMG} .
 
 tests:
 	docker run
 
 shell:
-	docker run -it --entrypoint /bin/bash ${IMG}
+	docker run -it --entrypoint /bin/bash -v ${PWD}:/app ${IMG}
