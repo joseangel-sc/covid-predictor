@@ -9,5 +9,7 @@ class TestCleaner(TestCase):
         self.cleaner = Cleaner(self.file, self.country)
 
     def test_columns(self):
+        valid_columns = ['ds', 'y']
         self.df = self.cleaner.keep_date_only()
-        # self.assertTrue(all(df.columns == ['ds', 'y']))
+        df_columns = list(self.df.columns)
+        self.assertEqual(valid_columns, df_columns)
