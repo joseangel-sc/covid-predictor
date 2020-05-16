@@ -1,1 +1,2 @@
-fbprophet
+fbprophet==0.5
+conducto==0.0.47
